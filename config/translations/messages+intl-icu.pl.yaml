@@ -1,0 +1,211 @@
+error: Nieoczekiwany błąd
+
+english: Angielski
+polish: Polski
+
+service.request.missingName: Wykryto brakujące dane z wysłanego formularza!
+
+title.home: Diablo 2 Documentation
+title.news: Nowości -| Diablo 2 Documentation
+title.documentations: Dokumentacje -| Diablo 2 Documentation
+title.contact: Kontakt -| Diablo 2 Documentation
+title.downloads: Pobierz -| Diablo 2 Documentation
+title.info: Informacje dla twórców modyfikacji -| Diablo 2 Documentation
+title.faq: FAQ -| Diablo 2 Documentation
+title.login: Logowanie -| Diablo 2 Documentation
+title.register: Rejestracja -| Diablo 2 Documentation
+title.messages: Wiadomości -| Diablo 2 Documentation
+title.documentation.create: Stwórz dokumentację -| Diablo 2 Documentation
+
+header.home: Strona główna
+header.account: Konto
+header.documentations: Dokumentacje
+header.news: Nowości
+header.users: Użytkownicy
+header.gather: Wspólna gra
+
+footer.downloads: Pliki do pobrania
+footer.info: Informacje dla twórców modyfikacji
+footer.contact: Kontakt
+footer.donate: Darowizna
+
+user.menu.createDoc: Stwórz dokumentację
+user.menu.messages: Wiadomości
+user.menu.showProfile: Pokaż profil
+user.menu.settings: Ustawienia konta
+user.menu.logout: Wyloguj
+user.menu.login: Zaloguj
+user.menu.register: Stwórz konto
+user.menu.forgotPass: Zapomniałeś hasła
+
+users.header: Użytkownicy
+users.id: ID
+users.login: Login
+users.email: E-mail
+users.name: Nazwa użytkownika
+users.class: Klasa
+users.adddate: Data dodania
+users.roles: Role
+
+register.signup: Stwórz nowe konto
+register.name: Nazwa użytkownika
+register.user: Login
+register.password: Hasło
+register.password.confirm: Potwierdź hasło
+register.email: E-mail
+register.description: O mnie
+register.char.label: Wybierz swoją ulubioną postać
+register.char.none: Nie mam ulubionej postaci
+register.send: Zarejestruj
+register.user.error: Rejestracja nie powiodła się. Nie można dodać użytkownika!
+register.role.error: Rejestracja nie powiodła się. Nie można dodać roli użytkownika!
+register.login.exists: Ta nazwa użytkownika jest już zajęta!
+register.email.exists: Ten adres e-mail jest już zajęty!
+register.password_r: Musi potwierdzić poprawnie hasło
+register.success: Utworzono nowe konto użytkownika. Sprawdź swój e-mail, aby potwierdzić rejestrację
+register.fail: Rejestracja nie powiodła się
+register.validate.login.max: Zbyt długi login
+register.validate.login.notEmpty: Login nie może być pusty
+register.validate.name.max: Zbyt długa nazwa użytkownika
+register.validate.name.notEmpty: Nazwa użytkownika nie może być pusta
+register.validate.password.min: Hasło musi mieć co najmniej 6 znaków
+register.validate.password.max: Hasło za długie
+register.validate.email: Niepoprawny adres e-mail
+register.validate.email.max: Zbyt długi adres e-mail
+register.validate.email.notEmpty: Adres e-mail nie może być pusty
+register.validate.description.max: Zbyt długi opis użytkownika
+register.validate.character.max: Zbyt długa nazwa postaci
+
+login.signin: Zaloguj się
+login.user: Nazwa użytkownika
+login.password: Hasło
+login.rememberMe: Zapamiętaj mnie
+login.send: Zaloguj
+login.loggedAs: Jesteś zalogowany jako
+
+home.about: Diablo 2 Documentation jest przyjazną dla użytkownika aplikacją dostarczającą rozbudowany system dokumentacji dla twórców modyfikacji Diablo 2.
+home.about.header: O aplikacji
+home.features: Funkcjonalności
+home.feature1: Pełna automatyczność. Aby stworzyć dokumentację potrzebujesz tylko wysłać formularz z odpowiednimi plikami .txt, .tbl i obrazami.
+home.feature2: Wielojęzyczność. Obecnie wspierane Polski i Angielski.
+home.feature3: Głęboka walidacja dla przesłanych plików. Powiadomienia o błędach będą wyświetlane dla wszystkich nieprawidłowych danych.
+
+contact.header: Wyślij wiadomość do administratora Diablo 2 Documentation
+contact.label: Opisz swój problem i zadaj pytanie odnośnie Diablo 2 Documentation
+contact.send: Wyślij
+contact.login: Tylko zarejestrowani użytkownicy mogą wysłać wiadomość prywatną do administratora
+contact.message.error: Nie można wysyłać wiadomości do administratora!
+contact.message.error.self: Nie możesz wysłać wiadomości do samego siebie
+contact.message.success: Wysłano wiadomość do administratora
+
+downloads.header: Narzędzia, które mogą pomóc w tworzeniu modyfikacji do Diablo II <br> (testowane na Windows 10)
+downloads.description.1: Edytor arkuszy używany głównie do edycji plików 'data/global/excel/*.txt'
+downloads.description.2: Eksplorator plikow .mpq
+downloads.description.3: Bardzo dobry eksporter obrazów z wielu plików .dc6
+downloads.description.4: Eksporter pliku AnimData.txt
+
+faq.header: FAQ
+
+info.header: Informacje dla twórców modyfikacji
+info.description: "Uwaga: Wszystkie pomyłki w przesyłanych plikach będą skutkować błędami, które zostaną pokazane użytkownikowi podczas tworzenia dokumentacji."
+info.0: Plik 'images.zip' wymagany do stworzenia dokumentacji może mieć dowolną nazwę w formacie .zip i musi zawierać w sobie bezpośredio obrazy o nazwie według wzorca 'inv*.png' dla wszystkich przedmiotów widocznych w ekwipunku w grze.
+info.1: Każdy plik i każda wartość, która jest potrzebna do stworzenia dokumentacji jest dokładnie sprawdzana.
+info.2: Wiersze z pustym kluczem, lub pustą wartością w plikach .tbl są pomijane.
+info.3: Nowe wiersze w Properties.txt są wspierane, ale nie możesz użyć wartości kolumn 'stat', które odnoszą się do wiersza z pliku ItemStatCost.txt, gdzie ten wiersz ma pustą, lub niepoprawną wartość kolumny 'descstrpos'.
+info.4: Każdy wiersz w pliku ItemStatCost.txt, który ma pustą wartość w kolumnie 'descstrpos' jest ignorowany, jak również wszystko co używa ten wiersz.
+info.5: |
+  Możesz pogrupować wartości kolumn 'stat' w pliku Properties.txt tylko jeżeli:
+  - Są 2, lub więcej wartości kolumn 'stat' w pliku Properties.txt i są wiersze, które nie mają pustych wartości w kolumnach 'descstrpos' i 'descfunc' w pliku ItemStatCost.txt i są przypisane do wartosci kolumn 'stat' z wiersza w pliku Properties.txt 
+  - Wartości kolumn 'func' w pliku Properties.txt należą do zbioru {3, 15, 16, 17}
+  - Wartości kolumn 'dgrpfunc', 'dgrpstrpos' i 'dgrpstr2' w powiązanym wierszu z pliku ItemStatCost.txt nie mogą być puste i muszą być równe
+  - Są właściwe wiersze w plikach .tbl dla wszystkich potrzebnych wartości z pliku ItemStatCost.txt
+info.6: Jest zalecane, aby nie usuwać oryginalnych wierszy z plików .tbl i dodawać nowe wiersze tylko na końcu tych plików.
+info.7: Tworzenie nowych funkcji ItemsStatCost lub Properties, albo edytowanie istniejących funkcji nie jest wspierane. Jednakże, jeśli istnieje potrzeba zaimplementowania nowych funkcji w pliku ItemStatCost.txt to są wolne przedziały numerów funkcji (19, 25, 26, 29, 30, 31, 32, ..., 98, 99, 104, 105, 106, ...), które mogą być wykorzystane specjalnie dla pojedynczych modyfikacji Diablo II.
+info.8: Pamiętaj, że w Diablo 2 Documentation wiersze z pliku patchstring.tbl nadpisują wiersze z pliku expansionstring.tbl i wiersze z pliku expansionstring.tbl nadpisują wiersze z pliku string.tbl. Również nowsze wiersze (z większym indeksem) w pliku .tbl nadpisują te starsze (na początku pliku).
+info.9: Wartości z plików .tbl są sprawdzane pod kątem działania funkcji z pliku ItemStatCost.txt.
+info.10: |
+  Są tylko 2 tryby ataku:
+  - A1      atak używając broń
+  - TH      atak rzucając bronią
+info.11: |
+  Jest tylko 7 typów ataków:
+  - 1HS     wymach bronią jednoręczną
+  - 2HS     wymach bronią dwuręczną
+  - 1HT     pchnięcie lub rzut bronią jednoręczną
+  - 2HT     pchnięcie bronią dwuręczną
+  - HT1     wymach bronią do walki wręcz
+  - BOW     strzał z łuku
+  - XBW     strzał kuszy
+  - STF     cios z laski
+
+thread.user1.exists: Użytkownik ma już wątek
+thread.user2.exists: Użytkownik ma już wątek
+thread.user1.notEmpty: Brakuje użytkownika dla tego wątku
+thread.user2.notEmpty: Brakuje użytkownika dla tego wątku
+
+message.text.notEmpty: Tekst wiadomości nie może być pusty
+message.text.max: Zbyt długi tekst wiadomości
+
+role.code.notEmpty: Kod roli nie może być pusty
+role.code.max: Zbyt długi kod roli
+role.name.notEmpty: Nazwa roli nie może być pusta
+role.name.max: Zbyt długa nazwa roli
+role.name.exists: Nazwa roli już istnieje
+
+documentations.header: Dokumentacje
+documentations.empty: Nie ma jeszcze dodanych dokumentacji
+documentations.addDate: Data utworzenia
+documentations.lastUpdate: Aktualizacja
+documentations.author: Autor
+documentations.contributors: Współautorzy
+
+documentation.user.notEmpty: Nie znaleziono twórcy dokumentacji
+documentation.name.notEmpty: Nazwa dokumentacji nie może być pusta
+documentation.name.max: Zbyt długa nazwa dokumentacji
+documentation.create.header: Stwórz nową dokumentację
+documentation.create.description: Zanim zaczniesz sprawdź <a href="{info_link}">Informacje dla twórców modyfikacji</a>. Jeśli jesteś gotowy, prześlij wszystkie potrzebne pliki z listy poniżej i kliknij przycisk wyślij. Jeśli masz jakieś problemy śmiało <a href="{contact_link}">skontaktuj się z administratorem</a>.
+documentation.create.send: Stwórz
+documentation.create.lang: Wybierz przynajmniej 1 język
+documentation.create.chooseLang: Wybierz domyślny język
+documentation.input.name: Nazwa modyfikacji
+documentation.input.logo: Logo modyfikacji
+documentation.input.images: images.zip
+documentation.input.string: string.tbl
+documentation.input.expansionstring: expansionstring.tbl
+documentation.input.patchstring: patchstring.tbl
+documentation.input.animdata: AnimData.txt
+documentation.input.monstats: MonStats.txt
+documentation.input.montype: MonType.txt
+documentation.input.properties: Properties.txt
+documentation.input.itemstatcost: ItemStatCost.txt
+documentation.input.skills: Skills.txt
+documentation.input.skilldesc: SkillDesc.txt
+documentation.input.misc: Misc.txt
+documentation.input.armor: Armor.txt
+documentation.input.weapons: Weapons.txt
+documentation.input.uniqueitems: UniqueItems.txt
+
+confirmaccount.email.title: Diablo 2 Documentation - potwierdź konto
+confirmaccount.email.error: Nie można wysłać wiadomości e-mail do potwierdzenia konta!
+confirmaccount.success: Konto zostało pomyślnie zatwierdzone!
+confirmaccount.error: Nie można potwierdzić konta!
+
+messages.header: Wątki
+messages.header.threadPage: Wątek
+messages.reply: Odpowiedz
+messages.empty.threads: Nie ma jeszcze żadnych wątków
+messages.error: Nie można wysyłać wiadomości!
+messages.success: Wysłano wiadomość
+
+news.header: Nowości
+news.error: Nie można dodać wiadomości do listy nowości!
+news.success: Wiadomość została dodana do listy nowości!
+news.create.label: Dodaj post nowości
+
+amazon: Amazonka
+assassin: Zabójczyni
+necromancer: Nekromanta
+barbarian: Barbarzyńca
+paladin: Paladyn
+sorceress: Czarodziejka
+druid: Druid

@@ -1,0 +1,33 @@
+footer
+{
+    padding: 5px 0;
+    display: flex;
+    border-top: 12px solid transparent;
+    border-image: url('/build/images/border2.png') 8 round;
+    background: #111;
+}
+
+#menu-footer
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+#menu-footer > ul
+{
+    justify-content: center;
+    width: 100%;
+    display: flex;
+}
+#menu-footer > ul > li
+{
+    font-family: "Exocet Reaper Medium";
+    margin: 0 20px;
+    padding: 2px 10px;
+    font-size: 25px;
+}
+#menu-footer > ul > li > a:hover
+{
+    color: #aaa;
+    text-decoration: underline rgba(170,170,170,0.25);
+}

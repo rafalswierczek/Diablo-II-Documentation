@@ -1,0 +1,28 @@
+{% extends '/skeleton.html.twig' %}
+
+{% block title %}{{ 'title.downloads'|trans }}{% endblock %}
+
+{% block content %}
+    <div id="downloads" class="main-box">
+        <h1>{{ 'downloads.header'|trans|raw }}</h1>
+
+        <ul id="downloadList">
+            <li>
+                <a href="{{ asset('downloads/AFJ_Sheet.zip') }}">AFJ_Sheet.zip</a>
+                <p>{{ 'downloads.description.1'|trans }}</p>
+            </li>
+            <li>
+                <a href="{{ asset('downloads/MPQEditor.zip') }}">MPQEditor.zip</a>
+                <p>{{ 'downloads.description.2'|trans }}</p>
+            </li>
+            <li>
+                <a href="{{ asset('downloads/SixDice.jar') }}">SixDice.jar</a>
+                <p>{{ 'downloads.description.3'|trans }}</p>
+            </li>
+            <li>
+                <a href="{{ asset('downloads/animdata_edit.zip') }}">animdata_edit.zip</a>
+                <p>{{ 'downloads.description.4'|trans }}</p>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

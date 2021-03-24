@@ -1,0 +1,55 @@
+#threads > li
+{
+    display: flex;
+    padding: 10px 5px;
+    font-size: 20px;
+}
+#threads > li > a
+{
+    margin-left: 10px;
+    color: rgb(180, 171, 41);
+}
+
+#threads > li a:hover
+{
+    color: rgb(145, 139, 55);
+    text-decoration: underline;
+}
+
+.message
+{
+    max-width: 600px;
+    background: #222;
+    margin-bottom: 20px;
+}
+.message-header
+{
+    padding: 10px;
+    background: #333;
+    border-bottom: 1px solid #999;
+    display: flex;
+    align-items: center;
+}
+.message-header > h3{ margin: 0 5px; border-right: 2px solid #999;}
+.message-text
+{
+    padding: 10px;
+}
+
+#message-form
+{
+    max-width: 600px;
+}
+#message-textarea
+{
+    width: 600px;
+    height: 200px;
+    overflow: auto;
+    resize: vertical;
+}
+#message-button
+{
+    margin: 10px 0;
+    width: auto;
+    min-width: 150px;
+}

@@ -1,0 +1,122 @@
+{% extends '/skeleton.html.twig' %}
+
+{% block title %}{{ 'title.documentation.create'|trans }}{% endblock %}
+
+{% block content %}
+    <div id="documentation-create" class="main-box">
+        <h1>{{'documentation.create.header'|trans }}</h1>
+
+        {% set info_link = path('info') %}
+        {% set contact_link = path('contact') %}
+
+        <p id="documentation-create-description">{{'documentation.create.description'|trans({'{info_link}': info_link, '{contact_link}': contact_link})|raw }}</p>
+
+        <form action="" method='POST' enctype="multipart/form-data" id="documentation-create-form">
+            <p>{{ 'documentation.create.lang'|trans }}</p>
+            <div id="documentation-create-languages">
+                <div class="documentation-create-languages">
+                    <h3>{{ 'english'|trans }}</h3>
+
+                    <div class="form-group">
+                        <label for="documentation-input-string-en">{{ 'documentation.input.string'|trans }}</label>
+                        <input type="file" name="stringEN" id="documentation-input-string-en" accept=".tbl">
+                    </div>
+                    <div class="form-group">
+                        <label for="documentation-input-expansionstring-en">{{ 'documentation.input.expansionstring'|trans }}</label>
+                        <input type="file" name="expansionstringEN" id="documentation-input-expansionstring-en" accept=".tbl">
+                    </div>
+                    <div class="form-group">
+                        <label for="documentation-input-patchstring-en">{{ 'documentation.input.patchstring'|trans }}</label>
+                        <input type="file" name="patchstringEN" id="documentation-input-patchstring-en" accept=".tbl">
+                    </div>
+                </div>
+                <div class="documentation-create-languages">
+                    <h3>{{ 'polish'|trans }}</h3>
+
+                    <div class="form-group">
+                        <label for="documentation-input-string-pl">{{ 'documentation.input.string'|trans }}</label>
+                        <input type="file" name="stringPL" id="documentation-input-string-pl" accept=".tbl">
+                    </div>
+                    <div class="form-group">
+                        <label for="documentation-input-expansionstring-pl">{{ 'documentation.input.expansionstring'|trans }}</label>
+                        <input type="file" name="expansionstringPL" id="documentation-input-expansionstring-pl" accept=".tbl">
+                    </div>
+                    <div class="form-group">
+                        <label for="documentation-input-patchstring-pl">{{ 'documentation.input.patchstring'|trans }}</label>
+                        <input type="file" name="patchstringPL" id="documentation-input-patchstring-pl" accept=".tbl">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <select name="defaultLang" id="documentation-input-chooseLang">
+                    <option selected hidden disabled>{{ 'documentation.create.chooseLang'|trans }}</option>
+                    <option value="pl">{{ 'polish'|trans }}</option>
+                    <option value="en">{{ 'english'|trans }}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="name" id="documentation-input-name" placeholder="{{ 'documentation.input.name'|trans }}">
+            </div>
+            <div class="form-group">
+                <label for="documentation-input-logo">{{ 'documentation.input.logo'|trans }}</label>
+                <input type="file" name="logo" id="documentation-input-logo" accept=".png, .jpg, .jpeg, .bmp">
+            </div>
+            <div class="form-group">
+                <label for="documentation-input-images">{{ 'documentation.input.images'|trans }}</label>
+                <input type="file" name="images" id="documentation-input-images" accept=".zip">
+            </div>
+            <div class="form-group">
+                <label for="documentation-input-animdata">{{ 'documentation.input.animdata'|trans }}</label>
+                <input type="file" name="animdata" id="documentation-input-animdata" accept=".txt">
+            </div>
+            <div class="form-group">
+                <label for="documentation-input-monstats">{{ 'documentation.input.monstats'|trans }}</label>
+                <input type="file" name="monstats" id="documentation-input-monstats" accept=".txt">
+            </div>
+            {#<div class="form-group">
+                <label for="documentation-input-montype">{{ 'documentation.input.montype'|trans }}</label>
+                <input type="file" name="montype" id="documentation-input-montype" accept=".txt">
+            </div>
+            <div class="form-group">
+                <label for="documentation-input-elemtypes">{{ 'documentation.input.elemtypes'|trans }}</label>
+                <input type="file" name="elemtypes" id="documentation-input-elemtypes" accept=".txt">
+            </div> #}
+            <div class="form-group">
+                <label for="documentation-input-properties">{{ 'documentation.input.properties'|trans }}</label>
+                <input type="file" name="properties" id="documentation-input-properties" accept=".txt">
+            </div>
+            <div class="form-group">
+                <label for="documentation-input-itemstatcost">{{ 'documentation.input.itemstatcost'|trans }}</label>
+                <input type="file" name="itemstatcost" id="documentation-input-itemstatcost" accept=".txt">
+            </div>
+            <div class="form-group">
+                <label for="documentation-input-skills">{{ 'documentation.input.skills'|trans }}</label>
+                <input type="file" name="skills" id="documentation-input-skills" accept=".txt">
+            </div>
+            <div class="form-group">
+                <label for="documentation-input-skilldesc">{{ 'documentation.input.skilldesc'|trans }}</label>
+                <input type="file" name="skilldesc" id="documentation-input-skilldesc" accept=".txt">
+            </div>
+            <div class="form-group">
+                <label for="documentation-input-misc">{{ 'documentation.input.misc'|trans }}</label>
+                <input type="file" name="misc" id="documentation-input-misc" accept=".txt">
+            </div>
+            <div class="form-group">
+                <label for="documentation-input-armor">{{ 'documentation.input.armor'|trans }}</label>
+                <input type="file" name="armor" id="documentation-input-armor" accept=".txt">
+            </div>
+            <div class="form-group">
+                <label for="documentation-input-weapons">{{ 'documentation.input.weapons'|trans }}</label>
+                <input type="file" name="weapons" id="documentation-input-weapons" accept=".txt">
+            </div>
+            <div class="form-group">
+                <label for="documentation-input-uniqueitems">{{ 'documentation.input.uniqueitems'|trans }}</label>
+                <input type="file" name="uniqueitems" id="documentation-input-uniqueitems" accept=".txt">
+            </div>
+
+            <button id="documentation-button">{{ 'contact.send'|trans }}</button>
+        </form>
+    </div>
+{% endblock %}

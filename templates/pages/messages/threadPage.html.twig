@@ -1,0 +1,28 @@
+
+{% extends '/skeleton.html.twig' %}
+
+{% block title %}{{ 'title.messages'|trans }}{% endblock %}
+
+{% block content %}
+    {% if messages is not empty and receiverName is not empty %}
+        <h2>{{ 'messages.header.threadPage'|trans }} - {{receiverName}}</h2>
+        
+        <form action="" method='POST' id="message-form">
+            <div class="form-group">
+                <label for="message-textarea">{{ 'messages.reply'|trans }}</label>
+                <textarea name="message" id="message-textarea" required autofocus></textarea>
+            </div>
+    
+            <button id="message-button">{{ 'contact.send'|trans }}</button>
+        </form>
+
+        <div id="messages">
+            {% for message in messages %}
+                <div class="message">
+                    <span class="message-header"><h3>{{message.User.Name}}</h3><p>{{ message.AddDate|date('d-m-Y H:i:s') }}</p></span>
+                    <div class="message-text">{{message.Text}}</div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}

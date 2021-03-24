@@ -1,0 +1,31 @@
+{% extends '/skeleton.html.twig' %}
+
+{% block title %}{{ 'title.news'|trans }}{% endblock %}
+
+{% block content %}
+    <div id="news" class="main-box">
+        <h1>{{ 'news.header'|trans }}</h1>
+        
+        {% if is_granted("ROLE_ADMIN") %}
+            <form action="news/add" method='POST' id="news-create-form">
+                <div class="form-group">
+                    <label for="news-create-textarea">{{ 'news.create.label'|trans }}</label>
+                    <textarea name="text" id="news-create-textarea" required autofocus></textarea>
+                </div>
+        
+                <button id="news-create-button">{{ 'contact.send'|trans }}</button>
+            </form>
+        {% endif %}
+
+        {% if news is defined %}
+            <ul id="newsList">
+                {% for message in news %}
+                    <li>
+                        <h3>{{ message.AddDate|date('d-m-Y H:i:s') }}</h3>
+                        <pre>{{ message.Text }}</pre>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+{% endblock %}

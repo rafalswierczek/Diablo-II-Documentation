@@ -1,0 +1,59 @@
+{% extends '/skeleton.html.twig' %}
+
+{% block content %}
+    <div id="users" class="main-box">
+        <h1>{{ 'users.header'|trans }}</h1>
+        
+        {% if users is defined %}
+            <table>
+                <thead>
+                    <tr>
+                        {% if is_granted("ROLE_ADMIN") %}<th>{{ 'users.id'|trans }}</th>{% endif %}
+                        {% if is_granted("ROLE_ADMIN") %}<th>{{ 'users.login'|trans }}</th>{% endif %}
+                        {% if is_granted("ROLE_ADMIN") %}<th>{{ 'users.email'|trans }}</th>{% endif %}
+                        <th>{{ 'users.name'|trans }}</th>
+                        <th>{{ 'users.class'|trans }}</th>
+                        {% if is_granted("ROLE_ADMIN") %}<th>{{ 'users.adddate'|trans }}</th>{% endif %}
+                        <th>{{ 'users.roles'|trans }}</th>
+                        {#{% if is_granted("ROLE_ADMIN") %}<th>Manage</th>{% endif %}#}
+                    </tr>
+                </thead>
+                <tbody>
+                {% for user in users %}
+                    <tr>
+                        {% if is_granted("ROLE_ADMIN") %}<td>{{ user.getID() }}</td>{% endif %}
+                        {% if is_granted("ROLE_ADMIN") %}<td>{{ user.getLogin() }}</td>{% endif %}
+                        {% if is_granted("ROLE_ADMIN") %}<td>{{ user.getEmail() }}</td>{% endif %}
+                        <td>{{ user.getName() }}</td>
+                        <td>{{ user.getCharacter() }}</td>
+                        {% if is_granted("ROLE_ADMIN") %}<td>{{ user.getAddDate()|date('d-m-Y H:i:s') }}</td>{% endif %}
+                        <td>
+                            <ul>
+                                {% for role in user.getRoles(true) %}
+                                    <li>{{role.getName()}}</li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                        {#{% if is_granted("ROLE_ADMIN") %}<td><i class="fas fa-ellipsis-v"></i></td>{% endif %}#}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        {% else %}
+            No users.
+        {% endif %}
+    </div>
+{% endblock content %}
+
+
+{#
+
+<ul>
+    {{ dump(user.getRoles(true)) }}
+    {% for role in user.getRoles(true) %}
+        <li>{{ dump("") }}<li>
+    {% endfor %}
+</ul>
+
+#}

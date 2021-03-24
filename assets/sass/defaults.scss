@@ -1,0 +1,159 @@
+@font-face
+{
+    font-family: "Exocet Reaper Medium";
+    src: url("//db.onlinewebfonts.com/t/e329334bdcba54d5a86210f994c23ecc.woff2") format("woff2"),
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    display: flex;
+    flex-direction: column;
+    background: #111;
+    color: #ddd;
+    font-size: 18px;
+    font-family: calibri;
+}
+
+#notifications
+{
+    max-width: 800px;
+}
+
+hr
+{
+    width: 80%;
+    border: none;
+    height: 1px;
+    background: #888;
+    margin: 5px;
+}
+
+table
+{
+    border-collapse: collapse;
+}
+table > thead > tr > th
+{
+
+}
+table > tbody > tr > td
+{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+li
+{
+    list-style: none;
+}
+
+a
+{
+    text-decoration: none;
+    color: #ddd;
+}
+
+h1,h2,h3,h4,h5,h6
+{
+    display: flex;
+    align-self: center;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+form
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    max-width: 500px;
+}
+form > h1
+{
+    text-align: center;
+    margin-bottom: 20px;
+}
+form > button
+{
+    width: 350px;
+    margin-top: 50px;
+}
+.form-group
+{
+    width: 100%;
+}
+.form-group > label
+{
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+.form-group > 
+{
+    input, select, textarea
+    {
+        text-align-last: center;
+        width: 100%;
+        padding: 3px;
+        font-size: 14px;
+    }
+    textarea
+    {
+        text-align-last: initial;
+    }
+}
+
+button
+{
+    font-family: inherit;
+    color: inherit;
+    font-size: inherit;
+    text-align: center;
+    background: #333;
+    border: 1px solid #ddd;
+    padding: 4px;
+    cursor: pointer;
+}
+button:hover
+{
+    background: #222;
+    border-radius: 5px;
+}
+
+#notifications
+{
+    margin-bottom: 20px;
+}
+.notification-content
+{
+    display: flex;
+    align-items: center;
+    padding: 15px 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+}
+.notification-content > i
+{
+    padding: 0px 10px;
+    font-size: 20px;
+}
+#notifications_success
+{
+    background: #0F530E;
+}
+#notifications_error
+{
+    background: #530E0E
+}
+#notifications_notice
+{
+    background: #626506
+}

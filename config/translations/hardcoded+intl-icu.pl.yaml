@@ -1,0 +1,55 @@
+class.helm: Klasa Hełmów
+class.helm.barbarian: Klasa Hełmów Barbarzyńcy
+class.helm.druid: Klasa Hełmów Druida
+class.armor: Klasa Pancerzy
+class.shield: Klasa Tarcz
+class.shield.paladin: Klasa Tarcz Paladyna
+class.shield.necromancer: Klasa Tarcz Nekromanty
+class.gloves: Klasa Rękawic
+class.boots: Klasa Butów
+class.belt: Klasa Pasów
+class.circlet: Klasa Obręczy
+
+class.elixir: Klasa Eliksirów
+class.potion.healing: Klasa Mikstur Leczenia
+class.potion.mana: Klasa Mikstur Many
+class.potion.stamina: Klasa Mikstur Wytrzymałości
+class.potion.antidote: Klasa Mikstur Antidotum
+class.potion.rejuvenation: Klasa Mikstur Wzmocnienia
+class.potion.thawing: Klasa Mikstur Odtajania
+class.book: Klasa Książek
+class.amulet: Klasa Amuletów
+class.ring: Klasa Pierścieni
+class.gold: Klasa Złota
+class.quest: Klasa Przedmiotów Zadań
+class.arrow: Klasa Strzał
+class.torch: Klasa Pochodni
+class.bolt: Klasa Bełtów
+class.scroll: Klasa Zwojów
+class.body: Klasa Części Ciała
+class.key: Klasa Kluczy
+class.ear: Klasa Uszu
+class.amethyst: Klasa Ametystów
+class.topaz: Klasa Topazów
+class.saphire: Klasa Szafirów
+class.emerald: Klasa Szmaragdów
+class.ruby: Klasa Rubinów
+class.diamond: Klasa Diamentów
+class.skull: Klasa Czaszek
+class.herb: Klasa Ziół
+class.charm.small: Klasa Małych Talizmanów
+class.charm.medium: Klasa Średnich Talizmanów
+class.charm.large: Klasa Dużych Talizmanów
+class.rune: Klasa Run
+class.jewel: Klasa Klejnotów
+
+prop.aura: Gdy przedmiot jest noszony, zapewnia %s poz. aurę %s
+prop.dur: dodaje %s wytrzymałości
+prop.repDur: Przywraca 1 wyrzymałości na %d sek.
+prop.regenDur: Przywraca 1 wyrzymałości na %d sek.
+prop.oskill: +%s do %s
+prop.skill: +%s do %s %s
+prop.skillRand: +%d do losowej umiejętności %s
+prop.bloody: rozdziera skórę wrogów
+prop.fade: ukrywa się w cieniach
+prop.ethereal: przedmiot eteryczny (nie może być naprawiony)

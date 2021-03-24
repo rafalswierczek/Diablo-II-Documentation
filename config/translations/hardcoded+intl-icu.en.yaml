@@ -1,0 +1,55 @@
+class.helm: Helm Class
+class.helm.barb: Barbarian Helm Class
+class.helm.druid: Druid Helm Class
+class.armor: Armor Class
+class.shield: Shield Class
+class.shield.paladin: Paladin Shield Class
+class.shield.necromancer: Necromancer Shield Class
+class.gloves: Gloves Class
+class.boots: Boots Class
+class.belt: Belt Class
+class.circlet: Circlet Class
+
+class.elixir: Elixir Class
+class.potion.healing: Healing Potion Class
+class.potion.mana: Mana Potion Class
+class.potion.stamina: Stamina Potion Class
+class.potion.antidote: Antidote Potion Class
+class.potion.rejuvenation: Rejuvenation Potion Class
+class.potion.thawing: Thawing Potion Class
+class.book: Book Class
+class.amulet: Amulet Class
+class.ring: Ring Class
+class.gold: Gold Class
+class.quest: Quest Item Class
+class.arrow: Arrow Class
+class.torch: Torch Class
+class.bolt: Bolt Class
+class.scroll: Scroll Class
+class.body: Body Part Class
+class.key: Key Class
+class.ear: Ear Class
+class.amethyst: Amethyst Class
+class.topaz: Topaz Class
+class.saphire: Saphire Class
+class.emerald: Emerald Class
+class.ruby: Ruby Class
+class.diamond: Diamond Class
+class.skull: Skull Class
+class.herb: Herb Class
+class.charm.small: Small Charm Class
+class.charm.medium: Medium Charm Class
+class.charm.large: Large Charm Class
+class.rune: Rune Class
+class.jewel: Jewel Class
+
+prop.aura: Level %s %s Aura When Equipped
+prop.dur: adds %s durability
+prop.repDur: Repairs 1 durability in %d seconds
+prop.regenDur: Repairs 1 durability in %d seconds
+prop.oskill: +%s to %s
+prop.skill: +%s to %s %s
+prop.skillRand: +%d to random skill %s
+prop.bloody: shreds flesh of enemies
+prop.fade: hides in the shadows
+prop.ethereal: ethereal (cannot be repaired)

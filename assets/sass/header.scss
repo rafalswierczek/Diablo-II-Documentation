@@ -1,0 +1,90 @@
+@import "mixins/arrows.scss";
+
+header
+{
+    padding: 5px 0;
+    display: flex;
+    border-bottom: 12px solid transparent;
+    border-image: url('/build/images/border2.png') 8 round;
+    background: #000;
+}
+
+#logo-link { z-index: 1000; }
+#logo-link > img { filter: grayscale(40%);}
+#logo-link:hover > img { filter: grayscale(0);}
+
+#menu-header
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+#menu-header > ul
+{
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    margin-left: -125px; // logo width/2
+}
+#menu-header > ul > li
+{
+    font-family: "Exocet Reaper Medium";
+    margin: 0 20px;
+    padding: 2px 10px;
+    font-size: 25px;
+}
+#menu-header > ul > li > a, #menu-account
+{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#menu-account > label > span { cursor: pointer;}
+#menu-header > ul > li > a:hover, #menu-account > label > span:hover
+{
+    color: #aaa;
+    text-decoration: underline rgba(170,170,170,0.25);
+}
+
+#account-icon-label > i { cursor: pointer;}
+#account-icon-label:hover > i { color: #aaa;}
+
+#account-icon-checkbox:checked ~ #menu-account-list { display: block;}
+
+#menu-account-list
+{
+    background: black;
+    opacity: 1;
+    display: none;
+    position: absolute;
+    transform: translate(0, calc(50% + 31px)); // calc(-50% + 11px), 17px
+    border: 1px solid white;
+    padding: 5px;
+}
+#menu-account-list::after { @include arrow-up;}
+#menu-account-list > li
+{
+    user-select: none;
+    font-size: 20px;
+}
+#menu-account-list > li > a:hover { color: #aaa;}
+#menu-account-list > li:first-of-type
+{
+    display: flex;
+    justify-content: center;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+    font-family: calibri;
+    font-size: 22px;
+}
+
+#lang-flag
+{
+    filter: grayscale(40%);
+    height: 21px;
+}
+#lang-flag:hover{ filter: grayscale(0);}

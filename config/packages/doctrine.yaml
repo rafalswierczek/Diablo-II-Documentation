@@ -1,0 +1,36 @@
+doctrine:
+    dbal:
+        default_connection: application
+        connections:
+            application:
+                url: '%env(resolve:DATABASE_URL_APPLICATION)%'
+                driver: 'pdo_mysql'
+                server_version: '1.2.3.4'
+                charset: utf8mb4
+            documentation:
+                url: '%env(resolve:DATABASE_URL_DOCUMENTATION)%'
+                driver: 'pdo_mysql'
+                server_version: '1.2.3.4'
+                charset: utf8mb4
+    orm:
+        auto_generate_proxy_classes: true
+        default_entity_manager: application_manager
+        entity_managers:
+            application_manager:
+                connection: application
+                mappings:
+                    Application:
+                        is_bundle: false
+                        type: annotation
+                        dir: '%kernel.project_dir%/src/Entity/Application'
+                        prefix: 'App\Entity\Application'
+                        alias: application
+            documentation_manager:
+                connection: documentation
+                mappings:
+                    Documentation:
+                        is_bundle: false
+                        type: annotation
+                        dir: '%kernel.project_dir%/src/Entity/Documentation'
+                        prefix: 'App\Entity\Documentation'
+                        alias: documentation

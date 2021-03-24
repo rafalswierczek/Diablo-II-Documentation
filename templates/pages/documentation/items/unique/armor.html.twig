@@ -1,0 +1,13 @@
+{% extends '/skeleton.html.twig' %}
+
+{% block title %}{{ documentation.Name }} -| Diablo 2 Documentation{% endblock %}
+
+{% block content %}
+    <div id="?">
+        <h1>{{'documentation.items'|trans({
+            '{sort}': 'tors', '{branch}': 'Unique', '{rank}': 'Normal'
+        }) }}</h1>
+        
+        {{ dump(data) }}
+    </div>
+{% endblock %}

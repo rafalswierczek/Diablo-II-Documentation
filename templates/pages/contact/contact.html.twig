@@ -1,0 +1,22 @@
+{% extends '/skeleton.html.twig' %}
+
+{% block title %}{{ 'title.contact'|trans }}{% endblock %}
+
+{% block content %}
+    <div id="contact" class="main-box">
+        <h1>{{ 'contact.header'|trans }}</h1>
+
+        {% if is_granted('ROLE_USER') %}
+        <form action="{{ path('contactSend') }}" method='POST'>
+            <div class="form-group">
+                <label for="contact-message">{{ 'contact.label'|trans }}</label>
+                <textarea name="message" id="contact-message" required autofocus></textarea>
+            </div>
+
+            <button>{{ 'contact.send'|trans }}</button>
+        </form>
+        {% else %}
+            <h3>{{ 'contact.login'|trans }}</h3>
+        {% endif %}
+    </div>
+{% endblock %}

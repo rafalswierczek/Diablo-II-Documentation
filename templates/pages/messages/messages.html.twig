@@ -1,0 +1,27 @@
+
+{% extends '/skeleton.html.twig' %}
+
+{% block title %}{{'title.messages'|trans}}{% endblock %}
+
+{% block content %}
+    <h2>{{'messages.header'|trans}}</h2>
+    
+    {% if threads is not empty %}
+        <ul id="threads" class="main-box">
+            {% for thread in threads %}
+                <li>
+                    <p>{{thread.NewMessageDate|date('d-m-Y H:i:s')}} |- </p>
+                    <a href="{{ path('threadPage', {id: thread.ID}) }}">
+                        {% if app.user.ID == thread.User1ID %}
+                            {{ thread.User2.name}}
+                        {% else %}
+                            {{ thread.User1.name}}
+                        {% endif %}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        {{'messages.empty.threads'|trans}}
+    {% endif %}
+{% endblock %}

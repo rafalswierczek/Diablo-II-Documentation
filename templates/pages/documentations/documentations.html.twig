@@ -1,0 +1,31 @@
+{% extends '/skeleton.html.twig' %}
+
+{% block title %}{{ 'title.documentations'|trans }}{% endblock %}
+
+{% block content %}
+    <div id="documentations" class="main-box">
+        <h1>{{'documentations.header'|trans}}</h1>
+        
+        {% if documentationsData is not empty %}
+            <ul class="documentations-list">
+            {% for documentation in documentationsData %}
+                <li class="documentations-documentation">
+                    <a href="{{ path('showDocumentation', {docName: documentation.name}) }}">
+                        <span class="documentations-name">{{ documentation.name }}</span>
+                        {% if documentation.logoPath is defined %} <img src="{{ documentation.logoPath }}" alt="{{ documentation.name }} logo"> {% endif %}
+                        <hr>
+                        <span class="documentations-addDate">{{ 'documentations.addDate'|trans }}: {{ documentation.addDate }}</span>
+                        <span class="documentations-lastUpdate">{{ 'documentations.lastUpdate'|trans }}: {{ documentation.addDate }}</span>
+                        <span class="documentations-author">{{ 'documentations.author'|trans }}: {{ documentation.author }}</span>
+                        {# <span class="documentations-contributors">{{ 'documentations.contributors'|trans }}: 
+                            {% for contributor in documentation.contributors %}<a href="{{ contributor.href }}">{{ contributor.name }}</a>{% endfor %}
+                        </span> #}
+                    </a>
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <span>{{'documentations.empty'|trans}}</span>
+        {% endif %}
+    </div>
+{% endblock %}

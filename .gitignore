@@ -1,0 +1,29 @@
+###> Diablo 2 Documentation ###
+/.vscode/
+/dev/
+/private/
+/assets/data/
+/assets/gimp/
+todo.txt
+
+###< Diablo 2 Documentation ###
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.*.local
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+###> symfony/webpack-encore-bundle ###
+/node_modules/
+/public/build/
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###
+
+###> symfony/phpunit-bridge ###
+.phpunit
+.phpunit.result.cache
+/phpunit.xml
+###< symfony/phpunit-bridge ###

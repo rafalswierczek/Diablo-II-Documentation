@@ -1,0 +1,34 @@
+{% extends '/skeleton.html.twig' %}
+
+{% block title %}{{ 'title.login'|trans }}{% endblock %}
+
+{% block content %}
+    {% if app.user %}
+        <div>{{ 'login.loggedAs'|trans }} '{{ app.user.username }}', <a href="{{ path('logout') }}">{{ 'user.menu.logout'|trans }}</a></div>
+    {% else %}
+        <form method="post" id="login-form">
+            
+            <h1>{{ 'login.signin'|trans }}</h1>
+
+            <div class="form-group">
+                <label for="login">{{ 'login.user'|trans }}</label>
+                <input type="text" value="{{ last_username }}" name="login" id="login" required autofocus>
+            </div>
+            
+            <div class="form-group">
+                <label for="inputPassword">{{ 'login.password'|trans }}</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+
+            {#<div class="form-group">
+                <label for="remember_me">Keep me logged in</label>
+                <input type="checkbox" id="remember_me" name="_remember_me" checked/>
+            </div>#}
+
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+            <button>{{ 'login.send'|trans }}</button>
+        </form>
+        {# {{ dump(last_username) }} #}
+    {% endif %}
+{% endblock %}

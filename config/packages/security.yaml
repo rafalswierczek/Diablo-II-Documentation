@@ -1,0 +1,31 @@
+security:
+    providers:
+        app_user_provider:
+            entity:
+                class: App\Entity\Application\User
+                manager_name: application_manager
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+            
+        main:
+            anonymous: true
+            lazy: true
+            guard:
+                authenticators:
+                    - App\Security\LoginAuthenticator
+            form_login:
+                check_path: login
+                login_path: login
+                default_target_path: /users
+                username_parameter: login
+                password_parameter: password
+                csrf_token_generator: security.csrf.token_manager
+            logout:
+                path: logout
+                target: login
+            remember_me:
+                secret: '%kernel.secret%'
+                lifetime: 2592000

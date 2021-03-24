@@ -1,0 +1,286 @@
+error: Unexpected error
+
+english: English
+polish: Polish
+
+service.request.missingName: Found missing form data in request!
+
+title.home: Diablo 2 Documentation
+title.news: News -| Diablo 2 Documentation
+title.documentations: Documentations -| Diablo 2 Documentation
+title.contact: Contact -| Diablo 2 Documentation
+title.downloads: Download -| Diablo 2 Documentation
+title.info: Informations for content creators -| Diablo 2 Documentation
+title.faq: FAQ -| Diablo 2 Documentation
+title.login: Sign-in -| Diablo 2 Documentation
+title.register: Register -| Diablo 2 Documentation
+title.messages: Messages -| Diablo 2 Documentation
+title.documentation.create: Create documentation -| Diablo 2 Documentation
+
+header.home: Home
+header.account: Account
+header.documentations: Documentations
+header.news: News
+header.users: Users
+header.gather: Gather
+
+footer.downloads: Downloads
+footer.info: Information for content creators
+footer.contact: Contact
+footer.donate: Donate
+
+user.menu.createDoc: Create documentation
+user.menu.messages: Messages
+user.menu.showProfile: Show profile
+user.menu.settings: Account settings
+user.menu.logout: Logout
+user.menu.login: Sign-in
+user.menu.register: Create account
+user.menu.forgotPass: Forgot password
+
+users.header: Users
+users.id: ID
+users.login: Login
+users.email: E-mail
+users.name: User name
+users.class: Class
+users.adddate: Add date
+users.roles: Roles
+
+register.signup: Create new account
+register.name: User name
+register.user: Login
+register.password: Password
+register.password.confirm: Confirm password
+register.email: E-mail
+register.description: About me
+register.char.label: Select your favorite character
+register.char.none: I have no favorite character
+register.send: Sign-up
+register.user.error: Registration failed. Cannot add user!
+register.role.error: Registration failed. Cannot add role!
+register.login.exists: This user name already exists!
+register.email.exists: This e-mail already exists!
+register.password_r: You have to confirm password properly
+register.success: New user account has been created. Check your e-mail to confirm account registration
+register.fail: Registration failed
+register.validate.login.max: Too long login name
+register.validate.login.notEmpty: Login name cannot be empty
+register.validate.name.max: Too long user name
+register.validate.name.notEmpty: User name cannot be empty
+register.validate.password.min: Password has to have at least 6 characters
+register.validate.password.max: Password is too long
+register.validate.email: Invalid e-mail address
+register.validate.email.max: Too long e-mail address
+register.validate.email.notEmpty: E-mail address cannot be empty
+register.validate.description.max: Too long user description
+register.validate.character.max: Too long character name
+
+login.signin: Sign-in
+login.user: User name
+login.password: Password
+login.rememberMe: Remember me
+login.send: Sign-in
+login.loggedAs: You are logged in as
+
+home.about: Diablo 2 Documentation is a user friendly application that provides advanced documentation system for Diablo 2 modification creators.
+home.about.header: About
+home.features: Features
+home.feature1: Fully automated. To create documentation you only have to upload appropriate .txt, .tbl files and images.
+home.feature2: Multilingual. Currently support for Polish and English.
+home.feature3: Deep validation for uploaded files. Error messages will be displayed for every invalid data.
+
+contact.header: Send a message to Diablo 2 Documentation administrator
+contact.label: Describe your problem and ask any question related to Diablo 2 Documentation
+contact.send: Send
+contact.login: Only registered users can send a private message to the administrator
+contact.message.error: Cannot send a message to the administrator!
+contact.message.error.self: You cannot send a message to yourself
+contact.message.success: Message to administrator has been sent
+
+downloads.header: Download tools that might help with creating Diablo II modification <br> (tested on Windows 10)
+downloads.description.1: Spreadsheet editor mainly used to manage 'data/global/excel/*.txt' files
+downloads.description.2: .mpq files explorer and manager
+downloads.description.3: Very good image extractor from multiple .dc6 files
+downloads.description.4: AnimData.txt file extractor
+
+faq.header: FAQ
+
+info.header: Informations for content creators
+info.description: "Remark: All mistakes in uploaded files will be filtered as errors and shown to the user while creating documentation."
+info.0: File 'images.zip' that is needed to create documentation could have any name with .zip format and must contain directly images with names based on pattern 'inv*.png' for all items that are visible in inventory in the game.
+info.1: Every file and every value that is needed to create documentation is strictly validated.
+info.2: Rows with empty key or value in tbl files are excluded.
+info.3: New rows in Properties.txt are supported but you cannot use 'stat' column values that refer to row in ItemStatCost.txt where this row has empty or invalid 'descstrpos' value.
+info.4: Every row in ItemStatCost.txt that has empty value in 'descstrpos' column is ignored as well as everything that uses this row.
+info.5: |
+  You can group stats from Properties.txt only if:
+  - There are 2 or more stats in Properties.txt and there are rows with no empty 'descstrpos' and 'descfunc' column values in ItemStatCost.txt that are assigned to that stats from row in Properties.txt.
+  - Stats in Properties.txt have proper (3, 15, 16, 17) 'func' column values.
+  - 'dgrpfunc', 'dgrpstrpos' and 'dgrpstr2' column values in related row from ItemStatCost.txt cannot be empty and must be equal.
+  - There are proper rows in .tbl files for all needed strings from ItemStatCost.txt.
+info.6: It's highly recommended to not delete rows from vanilla .tbl files and add new rows only at the end of these files.
+info.7: Creating new ItemsStatCost or Properties functions or editing existed functions is not supported. However, if there is a great need to implement some 'descfunc' there are free slots (19, 25, 26, 29, 30, 31, 32, ..., 98, 99, 104, 105, 106, ...) that may be implemented exclusively for single Diablo II modifications.
+info.8: Remember that in Diablo 2 Documentation rows from patchstring.tbl override rows from expansionstring.tbl and rows from expansionstring.tbl overrie rows from string.tbl. Also Newer rows (with higher index) in .tbl file override rows with smaller index (those at top of this .tbl file).
+info.9: Values in .tbl files are validated specially for 'descfunc' functions in ItemStatCost.txt.
+info.10: |
+  There are only 2 attack modes:
+  - A1      attack by USING the weapon
+  - TH      attack by THROWING the weapon
+info.11: |
+  There are only 7 attack types:
+  - 1HS     One Hand Swing
+  - 2HS     Two Hand Swing
+  - 1HT     One Hand Thrust
+  - 2HT     Two Hand Thrust
+  - HT1     One Hand Slash
+  - BOW     Bow
+  - XBW     Crossbow
+  - STF     Staff
+
+thread.user1.exists: User has thread already
+thread.user2.exists: User has thread already
+thread.user1.notEmpty: Found missing user in this thread
+thread.user2.notEmpty: Found missing user in this thread
+
+message.text.notEmpty: Message text cannot be empty
+message.text.max: Too long message text
+
+role.code.notEmpty: Role code cannot be empty
+role.code.max: Too long role code
+role.name.notEmpty: Role name cannot be empty
+role.name.max: Too long role name
+role.name.exists: Role name already exists
+
+documentations.header: Documentations
+documentations.empty: There are no added documentations yet
+documentations.addDate: Creation date
+documentations.lastUpdate: Last update
+documentations.author: Author
+documentations.contributors: Contributors
+
+documentation.user.notEmpty: Found missing documentation creator
+documentation.name.notEmpty: Documentation name cannot be empty
+documentation.name.max: Too long documentation name
+documentation.create.header: Create new documentation
+documentation.create.description: Before you start take a look at <a href="{info_link}">Information for content creators</a>. If you are ready, upload all needed files from list below and click send button. If you have any problems feel free to <a href="{contact_link}">contact the administrator</a>.
+documentation.create.send: Create
+documentation.create.lang: Choose at least 1 language
+documentation.create.chooseLang: Choose default language
+documentation.input.name: Modification name
+documentation.input.logo: Modification logo
+documentation.input.images: images.zip
+documentation.input.string: string.tbl
+documentation.input.expansionstring: expansionstring.tbl
+documentation.input.patchstring: patchstring.tbl
+documentation.input.animdata: AnimData.txt
+documentation.input.monstats: MonStats.txt
+documentation.input.montype: MonType.txt
+documentation.input.properties: Properties.txt
+documentation.input.itemstatcost: ItemStatCost.txt
+documentation.input.skills: Skills.txt
+documentation.input.skilldesc: SkillDesc.txt
+documentation.input.misc: Misc.txt
+documentation.input.armor: Armor.txt
+documentation.input.weapons: Weapons.txt
+documentation.input.uniqueitems: UniqueItems.txt
+documentation:
+  items: >-
+    {sort, select,
+        tors { {branch} {rank} Armors }
+        shie { {branch} {rank} Shields }
+        helm { {branch} {rank} Helmets }
+        boot { {branch} {rank} Boots }
+        glov { {branch} {rank} Gloves }
+        belt { {branch} {rank} Belts }
+        circ { {branch} {rank} Circlets }
+        phlm { {branch} {rank} Barbarian Helmets }
+        pelt { {branch} {rank} Druid Helmets }
+        ashd { {branch} {rank} Paladin Shields }
+        head { {branch} {rank} Necromancer Shields }
+    }
+
+# unique.armor: Unique Armor
+# unique.armor.normal: Unique Normal Armor
+  
+# unique.armor.exceptional: Unique Exceptional Armor
+#   tors: Unique Exceptional Armors
+#   shie: Unique Exceptional Shields
+#   helm: Unique Exceptional Helmets
+#   boot: Unique Exceptional Boots
+#   glov: Unique Exceptional Gloves
+#   belt: Unique Exceptional Belts
+#   circ: Unique Exceptional Circlets
+#   phlm: Unique Exceptional Barbarian Helmets
+#   pelt: Unique Exceptional Druid Helmets
+#   ashd: Unique Exceptional Paladin Shields
+#   head: Unique Exceptional Necromancer Shields
+# unique.armor.elite: Unique Elite Armor
+#   tors: Unique Elite Armors
+#   shie: Unique Elite Shields
+#   helm: Unique Elite Helmets
+#   boot: Unique Elite Boots
+#   glov: Unique Elite Gloves
+#   belt: Unique Elite Belts
+#   circ: Unique Elite Circlets
+#   phlm: Unique Elite Barbarian Helmets
+#   pelt: Unique Elite Druid Helmets
+#   ashd: Unique Elite Paladin Shields
+#   head: Unique Elite Necromancer Shields
+# unique.weapons: Unique weapons
+# unique.weapons.normal: Unique Normal Weapons
+# unique.weapons.normal:
+#   pole: Unique Normal Polearms
+#   axe: Unique Normal Axes
+#   taxe: Unique Normal Throwing Axes
+#   swor: Unique Normal Swords
+#   knif: Unique Normal Daggers
+#   tkni: Unique Normal Throwing Knives
+#   club: Unique Normal Clubs
+#   mace: Unique Normal Maces
+#   hamm: Unique Normal Hammers
+#   rod: Unique Normal Rods
+#   scep: Unique Normal Scepters
+#   orbs: Unique Normal Orbs
+#   jave: Unique Normal Javelins
+#   ajav: Unique Normal Amazon Javelins
+#   spea: Unique Normal Spears
+#   aspe: Unique Normal Amazon Spears
+#   bow: Unique Normal Bows
+#   abow: Unique Normal Amazon Bows
+#   xbow: Unique Normal Crossbows
+#   staf: Unique Normal Staffs
+#   wand: Unique Normal Wands
+#   h2h: Unique Normal Claws
+#   h2h2: Unique Normal Greater Claws
+# unique.weapons.exceptional: Unique Exceptional weapons
+# unique.weapons.elite: Unique Elite weapons
+# unique.misc.amulets:
+# unique.misc.rings:
+# common: Common Items
+# common: Common Items
+
+confirmaccount.email.title: Diablo 2 Documentation - confirm account
+confirmaccount.email.error: Cannot send e-mail message to confirm account!
+confirmaccount.success: Account has been confirmed successfully!
+confirmaccount.error: Cannot confirm account!
+
+messages.header: Threads
+messages.header.threadPage: Thread
+messages.reply: Reply
+messages.empty.threads: There are no threads yet
+messages.error: Cannot send a message!
+messages.success: Message has been sent
+
+news.header: News
+news.error: Cannot add news message!
+news.success: News Message added successfully!
+news.create.label: Add news post
+
+amazon: Amazon
+assassin: Assassin
+necromancer: Necromancer
+barbarian: Barbarian
+paladin: Paladin
+sorceress: Sorceress
+druid: Druid

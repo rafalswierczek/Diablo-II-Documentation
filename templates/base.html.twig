@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Diablo 2 Documentation ...">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="robots" content="noindex, nofollow">
+
+        <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('/favicon-192.png') }}">
+        <link rel="icon" type="image/png" sizes="64x64" href="{{ asset('/favicon-64.png') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/favicon-32.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/favicon-16.png') }}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/favicon-180.png') }}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('/favicon-72.png') }}">
+        <link rel="shortcut icon" href="{{ asset('/favicon.ico') }}">
+        
+        {# assets todo #}
+        <script src="https://kit.fontawesome.com/f99ce8acb7.js" crossorigin="anonymous"></script>
+        
+        <title>{% block title %}Diablo 2 Documentation{% endblock title %}</title>
+        
+        {% block css %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block js_head %}
+            
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+
+        {% block js_body %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </body>
+</html>

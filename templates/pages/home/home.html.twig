@@ -1,0 +1,17 @@
+{% extends '/skeleton.html.twig' %}
+
+{% block title %}{{ 'title.home'|trans }}{% endblock %}
+
+{% block content %}
+    <h1>{{ 'home.about.header'|trans }}</h1>
+    <div id="about">{{ 'home.about'|trans }}</div>
+
+    <h1>{{ 'home.features'|trans }}</h1>
+    <div id="features">
+        <ul>
+            <li>{{ 'home.feature1'|trans }}</li>
+            <li>{{ 'home.feature2'|trans }}</li>
+            <li>{{ 'home.feature3'|trans }}</li>
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends '/skeleton.html.twig' %}
+
+{% block title %}{{ 'title.register'|trans }}{% endblock %}
+
+{% block content %}
+    <form action="" method="POST" id="register-form">
+        <h1>{{ 'register.signup'|trans }}</h1>
+
+        <div class="form-group">
+            <label for="name">{{ 'register.name'|trans }}</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="login">{{ 'register.user'|trans }}</label>
+            <input type="text" id="login" name="login" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">{{ 'register.password'|trans }}</label>
+            <input type="password" id="password" name="password" minlength="6" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password_r">{{ 'register.password.confirm'|trans }}</label>
+            <input type="password" id="password_r" name="password_r" minlength="6" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">{{ 'register.email'|trans }}</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">{{ 'register.description'|trans }}</label>
+            <textarea id="description" name="description"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="character">{{ 'register.char.label'|trans }}</label>
+            <select id="character" name="character">
+                <option value="">{{ 'register.char.none'|trans }}</option>
+                <option value="Amazon">{{ 'amazon'|trans }}</option>
+                <option value="Assassin">{{ 'assassin'|trans }}</option>
+                <option value="Necromancer">{{ 'necromancer'|trans }}</option>
+                <option value="Barbarian">{{ 'barbarian'|trans }}</option>
+                <option value="Paladin">{{ 'paladin'|trans }}</option>
+                <option value="Sorceress">{{ 'sorceress'|trans }}</option>
+                <option value="Druid">{{ 'druid'|trans }}</option>
+            </select>
+        </div>
+
+        <button class="btn">{{ 'register.send'|trans }}</button>
+    </form>
+{% endblock %}

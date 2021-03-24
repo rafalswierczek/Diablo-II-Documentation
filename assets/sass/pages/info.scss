@@ -1,0 +1,23 @@
+#info
+{
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#infoList li
+{
+    margin: 20px 0;
+    padding: 5px;
+    background: #222;
+}
+
+#infoList li pre
+{
+    font-size: 18px;
+    line-height: 25px;
+    max-width: 1000px;
+    white-space: pre-wrap;
+    font-family: calibri;
+}

@@ -1,0 +1,85 @@
+{% extends '/base.html.twig' %}
+{% block body %}
+    {% block header %}
+        <header>
+            <a href="{{ path('home') }}" id="logo-link"><img src="{{ asset('build/images/d2doc_logo.png') }}" alt="Diablo 2 Documentation logo" width="250" height="50"></a>
+            <nav id="menu-header">
+                <ul>
+                    <!-- <li><a href="#">Forum</a></li> -->
+                    <li><a href="{{ path('news') }}">{{ 'header.news'|trans }}</a></li>
+                    {% if is_granted("ROLE_USER") %} <li><a href="{{ path('users') }}">{{ 'header.users'|trans }}</a></li>{% endif %}
+                    <li><a href="{{ path('documentations')}}">{{ 'header.documentations'|trans }}</a></li>
+                    {#<li><a href="#">FAQ</a></li>#}
+                    {#{% if is_granted("ROLE_USER") %}<li><a href="#">{{ 'header.gather'|trans }}</a></li>{% endif %}#}
+                    <li>
+                        <div id="menu-account">
+                            <input type="checkbox" id="account-icon-checkbox" style="display:none;">
+                            <label id="account-icon-label" for="account-icon-checkbox">
+                                {% if is_granted("ROLE_USER") %}<i class="fas fa-user"></i>
+                                {% else %}<span>{{ 'header.account'|trans }}</span>{% endif %}
+                            </label>
+                            <ul id="menu-account-list">
+                                {% if is_granted("ROLE_USER") %}
+                                    <li>{{app.user.name}}</li>
+                                    {% if is_granted("ROLE_CREATOR") or is_granted("ROLE_ADMIN") %}
+                                        <li><a href="{{path('createDocumentation')}}">{{ 'user.menu.createDoc'|trans }}</a></li>
+                                    {% endif %}
+                                    <li><a href="{{path('messages')}}">{{ 'user.menu.messages'|trans }}</a></li>
+                                    {#<li><a href="#">{{ 'user.menu.showProfile'|trans }}</a></li>#}
+                                    {#<li><a href="#">{{ 'user.menu.settings'|trans }}</a></li>#}
+                                    <li><a href="{{path('logout')}}">{{ 'user.menu.logout'|trans }}</a></li>
+                                {% else %}
+                                    <li><a href="{{path('login')}}">{{ 'user.menu.login'|trans }}</a></li>
+                                    <li><a href="{{path('register')}}">{{ 'user.menu.register'|trans }}</a></li>
+                                    {#<li><a href="#">{{ 'user.menu.forgotPass'|trans }}</a></li>#}
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        {% set urlArray = app.request.requestUri|split('/') %}
+                        {% if app.request.locale == 'en' %}
+                            <a href="/pl/home"><img id="lang-flag" src="{{ asset('build/images/pol.svg') }}"></img></a>
+                        {% elseif app.request.locale == 'pl' %}
+                            <a href="/en/home"><img id="lang-flag" src="{{ asset('build/images/eng.svg') }}"></img></a>
+                        {% endif %}
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    {% endblock %}
+
+    {% block aside %}{% endblock aside %}
+
+    {% block section %}
+        <section>
+            <div id="notifications">
+                <div class="notifications" id='notifications_success'>
+                    {% for message in app.flashes('success') %} <div class="notification-content"><i class="far fa-check-circle"></i> <p>{{ message }}</p></div> {% endfor %}
+                </div>
+                <div class="notifications" id='notifications_notice'>
+                    {% for message in app.flashes('notice') %} <div class="notification-content"><i class="fas fa-exclamation-circle"></i> <p>{{ message }}</p></div> {% endfor %}
+                </div>
+                <div class="notifications" id='notifications_error'>
+                    {% if login_error is defined %} <div class="notification-content"><i class="fas fa-times"></i> <p>{{ error.messageKey|trans(login_error.messageData, 'security') }}</p></div> {% endif %}
+                    {% for message in app.flashes('error') %} <div class="notification-content"><i class="fas fa-times"></i> <p>{{ message }}</p></div> {% endfor %}
+                </div>
+            </div>
+
+            {% block content %}{% endblock content %}
+        </section>
+    {% endblock section %}
+
+    {% block footer %}
+        <footer>
+            <nav id="menu-footer">
+                <ul>
+                    <li><a href="{{ path('downloads') }}">{{ 'footer.downloads'|trans }}</a></li>
+                    <li><a href="{{ path('info') }}">{{ 'footer.info'|trans }}</a></li>
+                    <li><a href="{{ path('contact') }}">{{ 'footer.contact'|trans }}</a></li>
+                    <li><a href="#">{{ 'footer.donate'|trans }}</a></li>
+                </ul>
+            </nav>
+        </footer>
+    {% endblock footer %}
+{% endblock body %}
