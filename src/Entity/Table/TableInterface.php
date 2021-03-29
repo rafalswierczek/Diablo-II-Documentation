@@ -2,7 +2,9 @@
 
 namespace App\Entity\Table;
 
-interface TableInterface
+use App\Entity\EntityInterface;
+
+interface TableInterface extends EntityInterface
 {
     public function getFileName(): string;
 }

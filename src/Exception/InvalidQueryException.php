@@ -2,10 +2,17 @@
 
 namespace App\Exception;
 
-class InvalidQueryException extends \Doctrine\ORM\Query\QueryException
+use Doctrine\ORM\Query\QueryException;
+
+class InvalidQueryException extends QueryException
 {
-    public static function unexpectedQueryResult(string $message)
+    public static function unexpectedQueryResult(string $details = '')
     {
-        return new self('Unexpected query result: '.$message);
+        return new self('Unexpected query result. '.$details);
+    }
+
+    public static function unexpectedTransactionResult(string $details = '')
+    {
+        return new self('Unexpected transaction result. '.$details);
     }
 }

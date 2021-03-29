@@ -2,6 +2,9 @@
 
 namespace App\Service\DB;
 
+use Doctrine\DBAL\Connection;
+use Doctrine\ORM\EntityManagerInterface;
+use App\Exception\EntityException;
 use App\Entity\EntityInterface;
 use App\Service\Utils\Container;
 
@@ -22,17 +25,17 @@ class DBMiddleware
             $entity = $this->getEntityManager($connectionName)->getRepository($entityName)->find($objectId);
 
         if(!$entity)
-            throw EntityException::missingEntity($objectId);
+            throw EntityException::cannotFindEntity($entityName, $objectId);
 
         return $entity;
     }
 
-    public function getEntityManager(string $connectionName): \Doctrine\ORM\EntityManagerInterface
+    public function getEntityManager(string $connectionName): EntityManagerInterface
     {
         return $this->doctrine->getManager($connectionName);
     }
 
-    public function getConnection(string $connectionName): \Doctrine\DBAL\Connection
+    public function getConnection(string $connectionName): Connection
     {
         return $this->doctrine->getManager($connectionName)->getConnection();
     }

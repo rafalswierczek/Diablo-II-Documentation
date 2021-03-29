@@ -38,13 +38,9 @@ final class NotificationHandler implements NotificationEnum
     {
         if(strlen($type))
         {
-            $notifications = [];
-
-            foreach($this->notifications as $notification)
-                if($notification->getType() === $type)
-                    $notifications[] = $notification;
-
-            return $notifications;
+            return array_filter($this->notifications, function($notification) use ($type) {
+                return $notification->getType() === $type;
+            });
         }
         else
             return $this->notifications;
@@ -56,13 +52,13 @@ final class NotificationHandler implements NotificationEnum
         {
             foreach($this->notifications as $index => $notification)
                 if($notification->getType() === $type)
-                    unset($notifications[$index]);
+                    unset($this->notifications[$index]);
         }
         else
             $this->notifications = [];
     }
 
-    public function hasErrors(): bool
+    public function hasError(): bool
     {
         foreach($this->notifications as $notification)
             if($notification->getType() === NotificationEnum::ERROR)
@@ -71,12 +67,9 @@ final class NotificationHandler implements NotificationEnum
         return false;
     }
 
-    /**
-     * @throws \App\Exception\ErrorException
-     */
     public function throwIfAnyError()
     {
-        if($this->hasErrors())
+        if($this->hasError())
             throw new ErrorException();
     }
 }
