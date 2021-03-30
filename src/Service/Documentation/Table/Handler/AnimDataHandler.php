@@ -2,51 +2,66 @@
 
 namespace App\Service\Documentation\Table\Handler;
 
+use App\Entity\Documentation\AttackSpeed;
 use App\Entity\Table\AnimData;
 use App\Service\Utils\NotificationHandler;
 use App\Service\Validation\AnimDataValidator;
-use App\Service\Table\Tools\{TableHandler, TableContainer};
+use App\Service\DB\Documentation\AttackSpeedIterator;
 
 final class AnimDataHandler extends TableHandler
 {
-    private array $animDataTable;
     private AnimDataValidator $animDataValidator;
+    private AttackSpeedIterator $attackSpeedIterator;
 
-	public function __construct(AnimData $animData, AnimDataValidator $animDataValidator, NotificationHandler $notificationHandler, TableContainer $tableContainer)
+	public function __construct(
+        AnimDataValidator $animDataValidator,
+        NotificationHandler $notificationHandler,
+        AttackSpeedIterator $attackSpeedIterator
+    )
 	{
-        $this->animData = $animData;
         $this->animDataValidator = $animDataValidator;
-        parent::__construct($notificationHandler, $tableContainer);
+        $this->attackSpeedIterator = $attackSpeedIterator;
+
+        parent::__construct($notificationHandler);
     }
 
-    public function getWeaponsAttackSpeed(string $animdataPath, array $commonWeapons, int $skillIAS = 0, int $gearIAS = 0, int $startFrame = 0): ?array
+    public function getWeaponsAttackSpeed(string $animdataPath, array $commonWeapons, int $skillIAS = 0, int $gearIAS = 0, int $startFrame = 0): bool
     {
-        $attackSpeedTable = [];
+        if($this->notificationHandler->hasError())
+        {
+            $this->notificationHandler->addNotification(NotificationHandler::ERROR, 'attack_speed.cannot');
+            return false;
+        }
+        
         $animData = $this->getAnimData($animdataPath);
-
-        if(!$this->errorHandler->hasErrors())
+        
+        foreach($animData as $animDataRow)
         {
             foreach($commonWeapons as $weaponRow)
             {
-                foreach($animData as $animDataRow)
+                $animDataRow['wclass'] = strtoupper($animDataRow['wclass']);
+                $weaponRow['wclass'] = strtoupper($weaponRow['wclass']);
+                $weaponRow['2handedwclass'] = strtoupper($weaponRow['2handedwclass']);
+                
+                if($weaponRow['wclass'] === $animDataRow['wclass'] || $weaponRow['2handedwclass'] === $animDataRow['wclass'])
                 {
-                    $weaponRow['wclass'] = strtoupper($weaponRow['wclass']);
-                    $weaponRow['2handedwclass'] = strtoupper($weaponRow['2handedwclass']);
+                    $wclass = $weaponRow['wclass'] === $animDataRow['wclass'] ? $weaponRow['wclass'] : $weaponRow['2handedwclass'];
+
+                    $attackSpeed = 25/(ceil(256 * ($animDataRow['fpa'] - $startFrame) / floor($animDataRow['frames'] * (100 + $skillIAS + floor(120 * $gearIAS / (120 + $gearIAS)) - $weaponRow['speed']) / 100)) - 1);
                     
-                    if($weaponRow['wclass'] === $animDataRow['wclass'] || $weaponRow['2handedwclass'] === $animDataRow['wclass'])
-                    {
-                        $wclass = $weaponRow['wclass'] === $animDataRow['wclass'] ? $weaponRow['wclass'] : $weaponRow['2handedwclass'];
-                        $attackSpeed = 25/(ceil(256 * ($animDataRow['fpa'] - $startFrame) / floor($animDataRow['frames'] * (100 + $skillIAS + floor(120 * $gearIAS / (120 + $gearIAS)) - $weaponRow['speed']) / 100)) - 1);
-                        $attackSpeedTable[] = ['code' => $weaponRow['code'], 'char' => $animDataRow['char'], 'mode' => $animDataRow['mode'], 'wclass' => $wclass, 'attackSpeed' => $attackSpeed];
-                    }
+                    $attackSpeedTable[] = (new AttackSpeed())
+                        ->setWeaponCode($weaponRow['code'])
+                        ->setCharacter($animDataRow['char'])
+                        ->setAttackMode($animDataRow['mode'])
+                        ->setWclass($wclass)
+                        ->setAttackSpeed($attackSpeed);
                 }
             }
         }
-        if(empty($attackSpeedTable)) $errors['errors'][] = "Cannot get weapons attack speed due to previous errors or 'wclass' values from Weapons.txt do not match any values from the third part of 'CofName' column value from AnimData.txt.";
 
-        $this->setErrors($errors);
-        $this->setErrors($this->getErrors(), true);
-        return $attackSpeedTable;
+        $this->attackSpeedIterator->setTable($attackSpeedTable ?? []);
+
+        return true;
     }
 
     private function getAnimData(string $animdataPath): ?AnimData
