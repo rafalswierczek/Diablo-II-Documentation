@@ -3,7 +3,6 @@
 namespace App\Exception;
 
 use Doctrine\ORM\ORMException;
-use App\Entity\EntityInterface;
 
 class EntityException extends ORMException
 {

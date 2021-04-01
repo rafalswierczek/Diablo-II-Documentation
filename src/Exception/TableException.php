@@ -2,10 +2,10 @@
 
 namespace App\Exception;
 
-class ErrorException extends \Error
+class TableException extends \Exception
 {
     public static function errorFound(string $details)
     {
-        return new self("Found an error. $details");
+        return new self("Found an error while creating documentation. $details");
     }
 }
