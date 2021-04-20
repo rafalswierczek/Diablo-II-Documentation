@@ -1,23 +1,11 @@
 {% extends '/skeleton.html.twig' %}
 
+{% trans_default_domain 'application' %}
+
 {% block title %}{{ documentation.Name }} -| Diablo 2 Documentation{% endblock %}
 
 {% block content %}
     <div id="documentation" class="main-box">
         <h1>{{ documentation.Name }}</h1>
-        {% if logoPath is defined %} <img src="{{ logoPath }}" alt="{{ documentation.Name }} logo"> {% endif %}
-        <hr>
-        <ul>
-            <li>
-                <a href="{{ path('showData', {docName: documentation.Name, path: 'unique-armors'}) }}" class="documentation-link">{{'documentation.items'|trans({
-                    '{sort}': 'tors', '{branch}': 'Unique', '{rank}': 'Normal'
-                }) }}</a>
-            </li>
-            <li>
-                <a href="{{ path('showData', {docName: documentation.Name, path: 'unique-gloves'}) }}" class="documentation-link">{{'documentation.items'|trans({
-                    '{sort}': 'glov', '{branch}': 'Unique', '{rank}': 'Normal'
-                }) }}</a>
-            </li>
-        </ul>
     </div>
 {% endblock %}

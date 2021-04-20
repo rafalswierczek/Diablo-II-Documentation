@@ -7,14 +7,15 @@ file.image.invalid: imgInvalid {fileName}
 
 table.empty: Cannot extract data from {fileName}!
 table.column.notFound: Cannot find column with name '{columnName}' in {fileName}!
-table.column.invalidNumber: Found invalid number of columns at row {rowIndex} in {fileName}
-table.column.duplicates: "Found duplicate values: {duplicates} in column '{columnName}' in {fileName}"
+table.duplicateRows: "Found rows with duplicate identifier {uniqueKey} in {fileName}. Followed rows with the same identifier were omitted: {duplicatedRows}. Followed row was used as correct one: {correctRow}"
+table.header.duplicateNames: "Found duplicate column names in {fileName}: {duplicateColumnNames}"
 
-row.header.duplicateNames: "Found duplicate column names in {fileName}: {duplicateColumnNames}"
-row.empty: Failed to read row with index {rowIndex} in {fileName}
-row.value.empty: Found empty value in column '{columnName}' at row {rowIndex} in {fileName}
-row.value.invalid: Found invalid value in column '{columnName}' at row {rowIndex} in {fileName}
-row.value.outOfRange: "Found out of range value in column '{columnName}' at row {rowIndex} in {fileName}. Valid range: {range}"
-row.value.notInt: Found non integer value in column '{columnName}' at row {rowIndex} in {fileName}
+table.row.invalidLength: Found invalid number of columns at row {rowIndex} in {fileName}
+table.row.empty: Failed to read row with index {rowIndex} in {fileName}
+table.row.value.empty: Found empty value in column '{columnName}' at row {rowIndex} in {fileName}
+table.row.value.invalid: Found invalid value in column '{columnName}' at row {rowIndex} in {fileName}
+table.row.value.outOfRange: "Found out of range value in column '{columnName}' at row {rowIndex} in {fileName}. Valid range: {range}"
+table.row.value.invalidLength: "Found row value with invalid length in column '{columnName}' at row {rowIndex} in {fileName}. Valid length: {length}"
+table.row.value.notInt: Found non integer value in column '{columnName}' at row {rowIndex} in {fileName}
 
 tblKeys.notFound: "Following keys are not found in any of uploaded .tbl file for language {$lang}: {keys}"
